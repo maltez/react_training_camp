@@ -1,0 +1,17 @@
+{
+  "name": "02.webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^2.29.0",
+    "jquery": "^3.2.1",
+    "webpack": "^3.3.0"
+  }
+}
