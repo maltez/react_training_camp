@@ -14,7 +14,7 @@ const   LIST = [
 ];
 
 
-const iter = {
+class Iter {
 	
 	[Symbol.iterator] ()  {
 		let current = LIST[0];
@@ -33,9 +33,9 @@ const iter = {
 			}
 		};
 	}
-};
+}
 
 
-for (let i of iter) {
+for (let i of new Iter()) {
 	console.log(i);
 }
