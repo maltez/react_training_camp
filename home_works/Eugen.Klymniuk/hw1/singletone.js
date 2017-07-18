@@ -3,10 +3,16 @@
  */
 class MyModule {
 	constructor () {
+		if (MyModule._instance) {
+			return  MyModule._instance;
+		}
+		
 		this._state = {
 			value: 0,
 			counter: 0
 		};
+		
+		MyModule._instance = this;
 	}
 	
 	get state () { return  this._state; }
@@ -26,4 +32,4 @@ class MyModule {
 }
 
 
-module.exports = new MyModule();
+module.exports = MyModule;

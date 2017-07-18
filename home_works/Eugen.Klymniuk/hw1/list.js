@@ -1,30 +1,43 @@
 /**
- * Created by Eugen_EVK on 17-Jul-17.
+ * Created by Eugen_EVK on 18-Jul-17.
  */
-const   LIST = [
-	{ id: 1, data: 23, next: 7 },
-	{ id: 2, data: 13, next: 3 },
-	{ id: 3, data: 24, next: 9 },
-	{ id: 4, data: 71, next: 6 },
-	{ id: 5, data: 68, next: 4 },
-	{ id: 6, data: 31, next: 8 },
-	{ id: 7, data: 47, next: 5 },
-	{ id: 8, data: 59, next: 2 },
-	{ id: 9, data: 84, next: null },
-];
-
-
-class Iter {
+class List {
+	constructor () {
+		this._first = null;
+		this._length = 0;
+	}
+	
+	get first () { return this._first; }
+	get length () { return this._length; }
+	
+	add (val) {
+		let  el = { value: val, next: null },
+		     first = this.first,
+			 last = first;
+		
+		if (first) {
+			while (last.next) {
+				last = last.next;
+			}
+			last.next = el;
+		} else {
+			this._first = el;
+		}
+		
+		this._length++;
+		
+		return  el;
+	}
 	
 	[Symbol.iterator] ()  {
-		let current = LIST[0];
+		let current = this.first;
 		
 		return {
 			next ()  {
 				if (current) {
-					let value = `id: ${current.id}   data: ${current.data}`;
+					let value = `value: ${current.value}`;
 					
-					current = LIST.find( i => i.id === current.next );
+					current = current.next;
 					
 					return { value, done: false };
 				}
@@ -35,7 +48,15 @@ class Iter {
 	}
 }
 
+const list = new List();
 
-for (let i of new Iter()) {
+let len = 10;
+
+
+while (len) {
+	list.add(len--);
+}
+
+for (let i of list) {
 	console.log(i);
 }
