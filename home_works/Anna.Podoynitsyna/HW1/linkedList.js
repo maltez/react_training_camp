@@ -20,13 +20,14 @@ class CreateLinkedList {
       this.head = nodeToAdd;
       this.length++;
 	return nodeToAdd;
-    }
+    }else{
 	while(nodeToCheck.next) {
       nodeToCheck = nodeToCheck.next;
     }
 	nodeToCheck.next = nodeToAdd;
     this.length++;
     return nodeToAdd;
+  }
   }
  
 }
