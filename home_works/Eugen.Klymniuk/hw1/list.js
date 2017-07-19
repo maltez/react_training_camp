@@ -9,25 +9,31 @@ class List {
 	
 	get first () { return this._first; }
 	get length () { return this._length; }
+
 	
 	add (val) {
-		let  el = { value: val, next: null },
-		     first = this.first,
-			 last = first;
-		
-		if (first) {
-			while (last.next) {
-				last = last.next;
-			}
-			last.next = el;
-		} else {
+		const   el = { data: val, next: null };
+		const   iter = this[Symbol.iterator]();
+		let current, last;
+
+		if (!this._first) {
 			this._first = el;
+		} else {
+			last = this.first;
+			
+			do {
+				current = iter.next();
+				if (current.value) {
+					last = current.value;
+				}
+			} while (!current.done);
+
+			last.next = el;
 		}
-		
+
 		this._length++;
-		
-		return  el;
 	}
+	
 	
 	[Symbol.iterator] ()  {
 		let current = this.first;
@@ -35,7 +41,7 @@ class List {
 		return {
 			next ()  {
 				if (current) {
-					let value = `value: ${current.value}`;
+					const value = current;
 					
 					current = current.next;
 					
@@ -46,6 +52,7 @@ class List {
 			}
 		};
 	}
+
 }
 
 const list = new List();
@@ -58,5 +65,5 @@ while (len) {
 }
 
 for (let i of list) {
-	console.log(i);
+	console.log(`Value: ${i.data}`);
 }
