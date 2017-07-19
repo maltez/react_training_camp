@@ -9,7 +9,7 @@ class User implements IUser{
     public age : number;
     public isActive: boolean;
 
-    constructor (name, age, isActive){
+    constructor (name:any, age:any, isActive: any){
         this.name = name;
         this.age = age;
         this.isActive = isActive;
