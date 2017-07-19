@@ -1,0 +1,32 @@
+{
+  "name": "homework-02",
+  "version": "1.0.0",
+  "description": "Source code for home work 02",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./node_modules/webpack/bin/webpack",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maltez/react_training_camp.git"
+  },
+  "author": "Maxim Borisov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maltez/react_training_camp/issues"
+  },
+  "homepage": "https://github.com/maltez/react_training_camp#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "html-webpack-plugin": "^2.29.0",
+    "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.3.0",
+    "webpack-dev-server": "^2.5.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
+}
