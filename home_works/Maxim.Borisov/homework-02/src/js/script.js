@@ -1,12 +1,10 @@
-let $ = require('jquery');
-
 $('#registration').submit(function(e){
-  let emailRegExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/,
-    emailValue = $('#email').val(),
-    phoneRegExp = /^\++[0-9]{12}$/,
-    phoneValue = $('#phone').val(),
-    error = false,
-    errorMessage = '';
+  var emailRegExp = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  var emailValue = $('#email').val();
+  var phoneRegExp = /^\++[0-9]{12}$/;
+  var phoneValue = $('#phone').val();
+  var error = false;
+  var errorMessage = '';
 
   $('.form-messages').empty();
 

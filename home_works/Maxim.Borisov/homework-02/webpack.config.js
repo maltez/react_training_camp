@@ -1,24 +1,20 @@
 var path = require('path');
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
-    context: path.join(__dirname, 'src'),
-
     entry: {
-        script: './js/script.js',
-        style: './css/style.css'
+        script: './src/js/script.js',
+        style: './src/css/style.css'
     },
-
     output: {
         filename: '[name].[hash].js',
         path: path.join(__dirname, 'build')
     },
-
     resolve: {
         extensions: ['.js']
     },
-
     plugins: [
         new UglifyJsPlugin({
             compress: true,
@@ -28,14 +24,17 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename : 'index.html',
             title: 'HomeWork 02',
-            template: './index.html',
+            template: './src/index.html',
             inject: 'body',
-            favicon: './img/favicon.png',
+            favicon: './src/img/favicon.png',
             //minify: false, //Можно минифицировать HTML (https://github.com/kangax/html-minifier#options-quick-reference), но это не требуется условиями задачи
-            hash: false //Хеш добавляется к имени файла при output
+            hash: false //Хеш добавляется к имени файла при output'е
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
         })
     ],
-
     module:{
         loaders:[
             {
@@ -44,7 +43,6 @@ module.exports = {
             }
         ]
     },
-
     devtool: 'source-map',
-    watch: true
+    watch: false
 };
