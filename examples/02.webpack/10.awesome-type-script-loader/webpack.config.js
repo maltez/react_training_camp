@@ -11,13 +11,14 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts']
     },
+
     module:{
         loaders:[
             {
                 test: /\.ts$/,
                 loader: 'awesome-typescript-loader',
                 query:{
-                    useCache: true
+                    useCache: false
                 }
             }
         ]
