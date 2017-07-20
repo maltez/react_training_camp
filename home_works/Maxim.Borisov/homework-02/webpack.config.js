@@ -5,8 +5,8 @@ var webpack = require('webpack');
 
 module.exports = {
     entry: {
-        script: './src/js/script.js',
-        style: './src/css/style.css'
+        script: path.join(__dirname, './src/js/script.js'),
+        style: path.join(__dirname, './src/css/style.css')
     },
     output: {
         filename: '[name].[hash].js',
