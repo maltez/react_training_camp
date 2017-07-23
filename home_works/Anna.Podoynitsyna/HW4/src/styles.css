@@ -1,0 +1,11 @@
+body{background: #ccc;}
+h1{color: #777;}
+p{overflow: hidden;}
+.day{
+	display: block;
+	float: left;
+	width: 33px;
+}
+.day:nth-child(7n+1){
+	clear: left;
+}
