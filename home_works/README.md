@@ -19,3 +19,9 @@
 - Component contains submit button.
 - In the top component has comment list.
 - Apply pretty styles :)
+
+## Homework 6##
+- Create state-full component that manage fruits instances(fruit basket)
+- Create state-less component that will be shown fruit with picture.
+- Add ability manage these fruits (add new and remove existing).
+- Create component that filtered all this staff.
