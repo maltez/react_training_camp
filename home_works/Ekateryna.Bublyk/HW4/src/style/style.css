@@ -1,0 +1,21 @@
+h1 {
+	text-transform: uppercase;
+}
+.container {
+	margin: auto;
+	width: 400px;
+}
+.row {
+	display: flex;
+}
+.calendar__body {
+	width: 224px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.day {
+	border: 1px solid black;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+}
