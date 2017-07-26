@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "bundle":"node node_modules/webpack/bin/webpack.js",
+    "bundle": "node node_modules/webpack/bin/webpack.js",
     "server": "node_modules/.bin/webpack-dev-server --output-public-path=/build/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,7 +14,7 @@
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router-dom": "^4.1.2"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

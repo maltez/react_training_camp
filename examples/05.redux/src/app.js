@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
-import { About } from './about';
-
-import { Link, Switch, Route } from 'react-router-dom';
-import { Post } from './posts'
-import { Post1 } from './post1'
-import { Post2} from './post2'
+import { Increment } from './increment';
+import { Decrement } from './decrement';
+import { Show } from './show';
+import store from './store';
 
 
 export class App extends Component {
+    constructor(props){
+        super(props);
+        this.state = {count: 0};
+    }
+
+    componentWillMount(){
+        store.subscribe(
+            () => {
+                this.setState({count: store.getState()});
+            }
+        );
+    }
     render() {
-        return <div>
-        <div>
-            <Link to='/about'> Main </Link>
-            <br />
-            <Link to='/post'> Post </Link>
-            <br />
-            <Link to='/post1'> Post1 </Link>
-            <br />
-            <Link to='/post2'> Post2 </Link>
-        </div>
-            
-        <Switch>
-            <Route exact path='/about' component={About}/>
-            <Route exact path='/post' component={Post}/>
-            <Route path='/post1' component={Post1}/>
-            <Route path='/post2' component={Post2}/>
-        </Switch>
-        
-    </div>;
+        return (
+            <div>
+                <h1>Redux</h1>
+                <Increment />
+                <Show count={this.state.count}/>
+                <Decrement />
+            </div>);
     }
 }
 
