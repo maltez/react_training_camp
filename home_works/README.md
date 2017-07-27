@@ -25,3 +25,10 @@
 - Create state-less component that will be shown fruit with picture.
 - Add ability manage these fruits (add new and remove existing).
 - Create component that filtered all this staff.
+
+## Homework 7##
+- Create react application. Application should be show weather from two different providers. In main 'frame' you should show average temperature from both sites. In second component should shown temperature from site 1. In third component should shown temperature from site 2. Button click should be update weather on site
+
+## Homework 8##
+- Create react application that will be calculate factorial (We have one button that returns factorial of next integer number. Another button show the previous factorial value of previous number.) You have to show numbers in range 0 - 21.
+You need use redux architecture. You need cover all your BL by unit tests.
