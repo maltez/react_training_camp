@@ -8,5 +8,4 @@ yarn.lock
 .awcache/
 *.js.map
 *.map
-/home_work/dmitry.korol/HW2/css/*.css
-/home_work/dmitry.korol/HW2/*.html
+

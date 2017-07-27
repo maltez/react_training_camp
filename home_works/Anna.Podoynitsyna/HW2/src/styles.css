@@ -1,0 +1,18 @@
+#userForm {
+	padding: 2em;
+}
+#userForm .control-group {
+	width: 20em;
+	padding-bottom: 2.5em;
+	position: relative;
+}
+#userForm input {
+	width: 100%;
+}
+#userForm label.error {
+	color: red;
+	display: block;
+	position: absolute;
+	bottom: 1em;
+	left: 0;
+}
