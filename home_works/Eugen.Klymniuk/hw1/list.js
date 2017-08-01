@@ -16,7 +16,7 @@ class List {
 		const   iter = this[Symbol.iterator]();
 		let current, last;
 
-		if (!this._first) {
+		if (! this._first) {
 			this._first = el;
 		} else {
 			last = this.first;
@@ -26,7 +26,7 @@ class List {
 				if (current.value) {
 					last = current.value;
 				}
-			} while (!current.done);
+			} while (! current.done);
 
 			last.next = el;
 		}
