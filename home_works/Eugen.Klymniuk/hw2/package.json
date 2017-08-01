@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "node ./node_modules/webpack/bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Eugen_EVK",
@@ -11,6 +12,10 @@
   "devDependencies": {
     "html-webpack-plugin": "2.29.0",
     "jquery": "3.2.1",
+    "uglifyjs-webpack-plugin": "0.4.6",
     "webpack": "3.3.0"
+  },
+  "dependencies": {
+    "jquery-validation": "1.17.0"
   }
 }
